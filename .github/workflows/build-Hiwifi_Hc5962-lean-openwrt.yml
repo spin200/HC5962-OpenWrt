@@ -82,7 +82,7 @@ env:
    # Github 邮箱
    GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
    # Github
-   GITHUB: github.com/spin200/HC5962-OpenWrt.git
+   GITHUB: https://github.com/spin200/HC5962-OpenWrt.git
    # 创建+上传发布
    CREATE_RELEASE: true
    # 编译者
