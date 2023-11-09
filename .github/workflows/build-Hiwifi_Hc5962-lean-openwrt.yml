@@ -8,7 +8,6 @@
 
 # 编译的名称
 name: 编译Hiwifi_Hc5962 Lean's的OpenWrt固件
-
 on: 
   # release触发
  # release:
@@ -29,8 +28,8 @@ on:
   #   - cron: '0 3 * * 3'
   
   # 点击★开始触发编译固件
-  #watch:  
-  #   types: [started]
+  watch:  
+     types: [started]
   
 # 环境变量
 env:
