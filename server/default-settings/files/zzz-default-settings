@@ -9,13 +9,13 @@ sed -i 's/OpenWrt/danxiaonuo/g' /bin/config_generate
 # 设置时区
 sed -i 's/UTC/CST-8/g' /bin/config_generate
 # 修改默认登陆IP地址
-sed -i 's/192.168.1.1/10.8.1.1/g' /bin/config_generate
+sed -i 's/192.168.1.1/192.168.199.1/g' /bin/config_generate
 sed -i 's/192.168/10.8/g' /bin/config_generate
 
 # 增加 SSID 2.5G
-sed -i '/channel="11"/a\\t\tssid="danxiaonuo-2HZ"' /lib/wifi/mac80211.sh
+sed -i '/channel="11"/a\\t\tssid="HiWIFI-2HZ"' /lib/wifi/mac80211.sh
 # 增加 SSID 5.0G
-sed -i '/channel="36"/a\\t\t\tssid="danxiaonuo-5HZ"' /lib/wifi/mac80211.sh
+sed -i '/channel="36"/a\\t\t\tssid="HiWIFI-5HZ"' /lib/wifi/mac80211.sh
 # 修改默认 SSID
 sed -i 's/OpenWrt/${ssid}/g' /lib/wifi/mac80211.sh
 # 修改默认密钥
@@ -37,10 +37,10 @@ uci set system.@system[0].hostname=danxiaonuo
 uci commit system
 
 # 设置默认管理IP地址
-uci set network.lan.ipaddr='10.8.1.1'
+uci set network.lan.ipaddr='192.168.199.1'
 uci set network.lan.netmask='255.255.255.0'
 # IPV6设置
-uci set network.globals.ula_prefix="ddaa:6666:8888::/48"
+uci set network.globals.ula_prefix="fe80::28ae::/48"
 uci set network.lan.ip6assign='64'
 # 使用内置的 IPv6 管理
 uci set dhcp.lan.ra_management='1'
@@ -68,7 +68,7 @@ uci set wireless.radio0.country='CN'
 uci set wireless.radio0.mu_beamformer='1'
 uci set wireless.radio0.channel='auto'
 uci set wireless.radio0.htmode='HT40'
-uci set wireless.default_radio0.ssid='danxiaonuo-2HZ'
+uci set wireless.default_radio0.ssid='HiWIFI-2HZ'
 uci set wireless.default_radio0.encryption='sae-mixed'
 uci set wireless.default_radio0.key='password'
 uci set wireless.default_radio0.ieee80211k='1'
@@ -76,7 +76,7 @@ uci set wireless.radio1.country='CN'
 uci set wireless.radio1.mu_beamformer='1'
 uci set wireless.radio1.channel='auto'
 uci set wireless.radio1.htmode='VHT80'
-uci set wireless.default_radio1.ssid='danxiaonuo-5HZ'
+uci set wireless.default_radio1.ssid='HiWIFI-5HZ'
 uci set wireless.default_radio1.encryption='sae-mixed'
 uci set wireless.default_radio1.key='password'
 uci set wireless.default_radio1.ieee80211k='1'
