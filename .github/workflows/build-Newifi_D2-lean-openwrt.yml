@@ -10,6 +10,13 @@
 name: 编译Newifi_D2 Lean's的OpenWrt固件
 
 on: 
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   # release触发
 #  release:
 #    types: [published]
