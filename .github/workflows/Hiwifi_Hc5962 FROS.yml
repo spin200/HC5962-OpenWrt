@@ -151,6 +151,7 @@ jobs:
       working-directory: ./openwrt
       run: | 
         make defconfig
+        ./build.sh -i
     
     # 连接SSH
     #- name: 连接SSH
