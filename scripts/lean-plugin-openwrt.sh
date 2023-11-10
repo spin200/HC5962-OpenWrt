@@ -18,7 +18,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/danxiaonuo/luci-app-adguardhome
 
 # Server酱
-git clone https://github.com/tty228/luci-app-serverchan.git package/danxiaonuo/luci-app-serverchan
+#git clone https://github.com/tty228/luci-app-serverchan.git package/danxiaonuo/luci-app-serverchan
 
 # luci-app-aliddns
 git clone https://github.com/honwen/luci-app-aliddns package/danxiaonuo/luci-app-aliddns
