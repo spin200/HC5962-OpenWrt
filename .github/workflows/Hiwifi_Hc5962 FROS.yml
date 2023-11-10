@@ -44,29 +44,29 @@ env:
    # 上传临时文件
    UPLOAD_TMP_LINK: false
    # 上传 bin 目录
-   UPLOAD_BIN_DIR: false
+   UPLOAD_BIN_DIR: true
    # 上传固件目录
    UPLOAD_FIRMWARE: true
    # 上传固件到奶牛快传
-   UPLOAD_COWTRANSFER: false
+   UPLOAD_COWTRANSFER: true
    # 上传固件到 WeTransfer
    UPLOAD_WETRANSFER: false
    # 上传分支
    UPLOAD_BRANCH: false
    # 分支
-   BRANCH: Hiwifi_Hc5962-Lean
+   BRANCH: Hiwifi_Hc5962-FROS
    # Github 用户名
    GITHUB_USER_NAME: spin200
    # Github 邮箱
    GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
    # Github
    GITHUB: https://github.com/spin200/HC5962-OpenWrt.git
-   # 创建+上传发布
+   # 创建+上传发布固件
    CREATE_RELEASE: true
    # 编译者
    BUILD_USER: spin200
    # 微信通知
-   SEND_WECHAT_MSG: false
+   SEND_WECHAT_MSG: true
    # 发行固件地址
    GITHUB_RELEASE: https://github.com/spin200/HC5962-OpenWrt/releases
  
@@ -177,8 +177,8 @@ jobs:
       working-directory: ./openwrt
       id: compile
       run: |
-        echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 V=s
+        echo -e "($(nproc)+1) thread compile"
+        make -j$((nproc)+1) || make -j1 V=s
         echo "::set-output name=status::success"
         
     # 上传到分支
