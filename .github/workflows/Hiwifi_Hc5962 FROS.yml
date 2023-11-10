@@ -145,13 +145,15 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        
     
     # 生成配置文件
     - name: 生成配置文件
       working-directory: ./openwrt
       run: | 
-        make defconfig
         ./build.sh -i
+        make defconfig
+
     
     # 连接SSH
     #- name: 连接SSH
