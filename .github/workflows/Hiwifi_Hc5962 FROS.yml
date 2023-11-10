@@ -264,6 +264,7 @@ jobs:
       run: |  
        echo "RELEASE_TAG=OpenWrt-${{ env.BRANCH }}-${{ env.RELEASE_DATE }}" >> $GITHUB_ENV  
        echo "success" >> tag.log
+       echo "::set-output name=status::success"
     
     # 发行固件
     - name: 发行固件
