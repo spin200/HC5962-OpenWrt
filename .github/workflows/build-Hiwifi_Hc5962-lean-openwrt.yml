@@ -307,12 +307,8 @@ jobs:
             ${{ github.event.commits[0].message }}
         files: ${{ env.FIRMWARE }}/*
 
-    # 微信通知
-    - name: 微信通知
-      if: steps.compile.outputs.status == 'success' && env.SEND_WECHAT_MSG == 'true' && !cancelled()
-      uses: emon100/Action-Serverchan@master
-      with:
-        SCKEY: ${{ secrets.SCKEY }}
-        text: ${{ env.BRANCH }}固件编译完成！
-        desp: 固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
-         curl https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ env.BRANCH }}固件编译完成！固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+    - name: 发送微信通知  
+      if: steps.compile.outputs.status == 'success' && env.SEND_WECHAT_MSG == 'true' && !cancelled()  
+      run: |  
+       curl https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ env.BRANCH }}固件编译完成！固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+
