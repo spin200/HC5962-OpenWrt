@@ -10,7 +10,7 @@ sed -i 's/OpenWrt/神奇的List/g' /bin/config_generate
 sed -i 's/UTC/CST-8/g' /bin/config_generate
 # 修改默认登陆IP地址
 sed -i 's/192.168.1.1/192.168.199.1/g' /bin/config_generate
-sed -i 's/192.168/10.8/g' /bin/config_generate
+sed -i 's/192.168.1/192.168.199/g' /bin/config_generate
 
 # 增加 SSID 2.5G
 sed -i '/channel="11"/a\\t\tssid="HiWIFI-2HZ"' /lib/wifi/mac80211.sh
