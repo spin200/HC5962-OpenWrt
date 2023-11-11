@@ -239,7 +239,7 @@ jobs:
        curl -fsSL git.io/file-transfer | sh  
        ./transfer cow --block 2621440 -s -p 99 -t 3 --hash --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log  
        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"  
-       echo "COWTRANSFER_URL=$(cat cowtransfer.log | grep https | cut -f3 -d')'" >> $GITHUB_ENV
+       echo "COWTRANSFER_URL=$(cat cowtransfer.log | grep https | cut -f3 -d)" >> $GITHUB_ENV
     # 上传固件到WeTransfer
     #- name: 上传固件到WeTransfer
       #if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
@@ -315,3 +315,4 @@ jobs:
         SCKEY: ${{ secrets.SCKEY }}
         text: ${{ env.BRANCH }}固件编译完成！
         desp: 固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+         curl https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ env.BRANCH }}固件编译完成！固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
