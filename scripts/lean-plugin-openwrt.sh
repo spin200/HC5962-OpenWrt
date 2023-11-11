@@ -1,5 +1,6 @@
 # 增加 lienol passwall
 echo "src-git lienol https://github.com/chenshuo890/lienol-openwrt-package.git" >> feeds.conf.default
+#添加软件源
 echo "src-git kiddin9 https://github.com/kiddin9/openwrt-packages" >> feeds.conf.default
 
 # 更改默认主题为Argon
