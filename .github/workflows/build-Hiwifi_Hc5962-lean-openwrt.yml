@@ -310,5 +310,7 @@ jobs:
     - name: 发送微信通知  
       if: steps.compile.outputs.status == 'success' && env.SEND_WECHAT_MSG == 'true' && !cancelled()  
       run: |  
-       curl -f -o response.json https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?title=固件编译完成！固件名称:${{ env.BRANCH }}&desp=固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
-       exit 0
+       curl https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?title=固件编译完成！固件名称:${{ env.BRANCH }}&desp=固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+
+#curl -f -o response.json https://sctapi.ftqq.com/${{ secrets.SCKEY }}.send?title=固件编译完成！固件名称:${{ env.BRANCH }}&desp=固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+#exit 0
