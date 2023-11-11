@@ -4,11 +4,11 @@ sed -i "s|root::0:0:99999:7:::|root:$password:0:0:99999:7:::|g" package/base-fil
 # 删除一些配置
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 # 修改默认登陆IP地址
-sed -i 's/192.168.1.1/10.8.1.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168/10.8/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1/192.168.199/g' package/base-files/files/bin/config_generate
 # 设置主机名称
 sed -i 's/OpenWrt/danxiaonuo/g' package/base-files/files/bin/config_generate
-sed -i '/uci commit system/i\uci set system.@system[0].hostname='danxiaonuo'' package/lean/default-settings/files/zzz-default-settings
+sed -i '/uci commit system/i\uci set system.@system[0].hostname='神奇的List'' package/lean/default-settings/files/zzz-default-settings
 # 设置时区
 sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
 # 增加IPV6
@@ -21,9 +21,9 @@ sed -i '/uci commit network/a\# IPV6防火墙\necho "ip6tables -t nat -I POSTROU
 # 重启WIFI
 sed -i '/exit 0/i\# 启动WIFI\nnohup sleep 60 && /sbin/wifi up &' package/base-files/files/etc/rc.local
 # 增加 SSID 2.5G
-sed -i '/channel="11"/a\\t\tssid="danxiaonuo-2HZ"' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/channel="11"/a\\t\tssid="HiwiFi-2HZ"' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 5.0G
-sed -i '/channel="36"/a\\t\t\tssid="danxiaonuo-5HZ"' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/channel="36"/a\\t\t\tssid="HiwiFi-5HZ"' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 修改默认 SSID
 sed -i 's/OpenWrt/${ssid}/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 修改默认密钥
