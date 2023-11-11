@@ -1,5 +1,14 @@
 # 增加 lienol passwall
 echo "src-git lienol https://github.com/chenshuo890/lienol-openwrt-package.git" >> feeds.conf.default
+# 添加订阅源
+echo "src-git kiddin9 https://github.com/kiddin9/openwrt-packages" >> feeds.conf.default
+
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+#echo 'src-git vssr https://github.com/jerrykuku/luci-app-vssr' >>feeds.conf.default
+#echo 'src-git bypass https://github.com/kiddin9/openwrt-bypass' >>feeds.conf.default
+#sed -i '$a src-git small8 https://github.com/kenzok8/small-package' feeds.conf.default
+#sed -i '$a src-git kiddin9 https://github.com/kiddin9/openwrt-packages' feeds.conf.default
 
 # 更改默认主题为Argon
 rm -rf package/lean/luci-theme-argon
@@ -15,7 +24,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/danxiaonuo/luci-app-smartdns
 
 # 复杂的AdGuardHome的openwrt的luci界面
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/danxiaonuo/luci-app-adguardhome
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/danxiaonuo/luci-app-adguardhome
 
 # Server酱
 #git clone https://github.com/tty228/luci-app-serverchan.git package/danxiaonuo/luci-app-serverchan
