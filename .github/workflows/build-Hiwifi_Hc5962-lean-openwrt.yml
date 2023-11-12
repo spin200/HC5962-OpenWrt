@@ -123,8 +123,9 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH $DIY_P2_SH
         cd openwrt
-        ../$DIY_P1_SH
-        ../$DIY_P2_SH
+         ../$DIY_P2_SH
+         ../$DIY_P1_SH
+       
         
     # 更新源
     - name: 更新源
