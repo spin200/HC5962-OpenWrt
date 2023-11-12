@@ -10,7 +10,7 @@ sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_gener
 #sed -i 's/192.168.1/192.168.199/g' package/base-files/files/bin/config_generate
 # 设置主机名称
 #sed -i 's/OpenWrt/danxiaonuo/g' package/base-files/files/bin/config_generate
-sed -i 's/OpenWrt/danxiaonuo/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/神奇的List/g' package/base-files/files/bin/config_generate
 #修改前sed -i '/uci commit system/i\uci set system.@system[0].hostname='danxiaonuo'' package/lean/default-settings/files/zzz-default-settings
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='神奇的List'' package/lean/default-settings/files/zzz-default-settings
 # 设置时区
