@@ -1,5 +1,5 @@
 # 修改root密码
-password=$(openssl passwd -1 'admin')
+password=$(openssl passwd -1 'adminadmin')
 sed -i "s|root::0:0:99999:7:::|root:$password:0:0:99999:7:::|g" package/base-files/files/etc/shadow
 # 删除一些配置
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
